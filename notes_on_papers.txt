@@ -1,0 +1,100 @@
+## Parallel window deconding enables scalable fault tolerant quantum computation: 
+
+- Decoherence.
+- Data stream speeds:
+    - 1MHz in superconducting
+- Data backlog makes qc run exponentially slower.
+- Terhal backlog argument.
+
+- Offline decoding works for Clifford circuits.
+- Blocking operations exist with magic state distillation, teleportation, and lattice surgery.
+
+- Minimum weight solution (minimum-weight perfect matching)
+- Make the buffer the same size as the distance.
+
+- A little known fact of QEC is that if the decoder infrastructure cannot keep up, a data backlog problem is encountered and the quantum computer runs exponentially slowe. 
+
+- Some sub-linearity can be seen due to paralleliza-
+tion overheads in software, particularly for low-distance
+codes where the decoding problem is relatively simple.
+
+- Logical clock: time it takes to execute one logical non-Clifford gate.
+
+- Time overheads can be exchanged for qubit overhead. 
+- Percolation theory arguments show that for a distance d code, the largest error clusters are typically of size O(polylog(d).
+
+Questions:
+    - measurement and qubit error difference on the graph?
+    - what is the point of the buffer?
+    - artificial defects
+    - rough top/bottom
+    - matching vs non-matching decoder.
+    - why is logical clock defined as it is?
+
+
+## Scalable surface code decoders with parallelization in time:
+
+- Minimum weight perfect matching and union find 
+- Therefore, the error correction between consecutive non-Clifford gates should be fast enough to keep up with the rapidly decohering quantum hardware, so that the error syndromes do not backlog
+
+- For the surface code, each cycle of detectors is the XOR of two consecutive cycles of syndromes
+
+- Detectors are 0 when there is no fault (gate, qubit idling, and initialization (resp., measurement). 
+
+- A detector to be open if there is a fault which flips that detector but no other detector of the same type;otherwise, it is closed
+
+- Formally, a defect is annihilated if it is incident to an odd number of edges in the set.
+
+Questions:
+    - How do you read error plots? 
+    - What are feed forward operations?
+    - Is online error correction still lagging behind the quantum operations because there are future windows?
+
+## Algorithmic Fault Tolerance for Fast Quantum Computing
+
+Questions:
+    - Transversal clifford operations?
+
+
+## Managing Classical Processing Requirements for Quantum Error Correction
+
+- fewer decoders result in an exponential increase in the memory required to store undecoded syndromes,
+
+## Localized statistics decoding: A parallel decoding algorithm for quantum low-density parity-check codes
+- Even with specialized hardware, inverting the matrix of a graph of this size cannot realistically be achieved within the decoherence time of a typical qubit
+- The algorithm is reliability-guided in that it uses prior knowledge of the error distribution to strategically select I so that the solution ˆe[I] spans faults that have the highest error probability. Reliability can be derived from the devices error model or soft information output from a pre-decoder.
+- For low physical error rates, the decoding problem for QLDPC amounts to solving a sparse system of linear equation
+
+Questions:
+    - What is special about CSS qldpc codes?
+    - How does belief propagation work?
+    - How does OSD work?
+    - What is a devices error model?
+
+- Quantum degeneracy
+  - impact on the logical qubit
+  - definition of the logical qubit themselves are needed
+
+  kernel of the matrix and not in the row space of the stabilizers
+  logical qubit needs both the z and x observabl
+
+Title: Parallel window decoding for qldpc codes.
+- don't know how to do logical operations
+
+throughput better than generation time. 
+- generation time
+  - atom arrays: 50ms
+  - superconducting: surface d microseconds, qldpc higher weight checks 2d 12-24 microseconds.
+
+magic state distilation uses reed miller codes.
+
+- surface code is faster time to solution. Each code only has one qubit. Sciquantum photonics.
+- If you care about safe, limitted field of view for atom traps and atom arrays. 
+decoding latencies depends on the codes
+
+  
+Look into:
+ - tanner graphs
+ - minimum weight recovery algs
+
+

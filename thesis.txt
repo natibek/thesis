@@ -1,0 +1,25 @@
+
+1. benchmarking different decoders for surface code
+
+2. benchmarking different decoders for qldpc
+- windowed belief propagation
+- quantum memory benchmarking? 
+
+3. write one qldpc decoder
+- new literature
+
+parallel window decoder, parallelized decoding alg for qldpc. 
+
+can you decode qldpc codes in real time?
+yes, optimization are required for this. 
+parallel window and benchmarking a variety of different codes.
+
+
+background, prior work, need for decoding, qldpc, what i plan to do
+
+real time decoding 
+this is the inner decoder and the outer window based decoder scheme.
+both affect the ability to do real time decoding 
+prior work that has been done 
+window but not parallel window decoding 
+timeline -> 
