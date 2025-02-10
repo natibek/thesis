@@ -38,7 +38,7 @@ def generate_window_and_error(parity_check, window_size: int = 5, error_rate=0.0
         print(window, window.shape)
         print("____________")
 
-        error_vec = np.random.binomial(1, 0.5, size=window_size*n1).reshape((1,window_size*n1))
+        error_vec = np.random.binomial(1, error_rate, size=window_size*n1).reshape((1,window_size*n1))
         print(error_vec)
         window_error_vec = np.zeros((1, cur_window*window_size*n1), dtype=int)
         print(f"{window_error_vec.shape=}  {error_vec.shape=}")
