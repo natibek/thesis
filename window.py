@@ -33,8 +33,8 @@ class Window:
         )
         self.m_l, self.n_l = self.extended_logical_ops.shape
 
-        self.cur_window = 1
-        self.buffer_size = window_size - stride
+        self.buffer_size = (window_size - stride)*self.m_p
+        self.commit_size = stride * self.m_p
 
         # number of columns in one window
         self.num_columns = (window_size + 1) * self.n_p 
