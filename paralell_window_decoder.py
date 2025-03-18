@@ -2,6 +2,27 @@ from window import Window
 import numpy as np
 from threading import Lock, Thread
 
+"""
+1. Generator to sequentially create provide the ith window.
+    - layer 1 threads get the odd iteration windows. 
+    - layer 2 threads get the even iteration windows and they wait until surrounding layer 1
+    windows are committed.
+        - A global count of the index that layer 2 is on.
+        - How bad would busy waiting be here?
+    - If not ready each has a queue containing the iteration index.
+2. 5 threads. 3 layer1, 2 layer2 with dynamic load allocation.
+3. Shared memory to store the layer1 commited errors, syndromes, and iteration index.
+4. Maybe some garbage collection to remove entries after layer 2 no longer needs layer1 commited errors
+
+LOOK at how many threads is reasonable.
+- 6 and 4, 6 and 5.
+- How long it takes to decode a problem
+- Assume it takes amount of time.
+- Window generation takes 1/2 of the decoding up to 10 times worse
+
+- window size will impact the decoding latency.
+- 
+"""
 class Layer1_Window(Window):
     def __init__(
             self, 

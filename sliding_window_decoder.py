@@ -53,9 +53,10 @@ class SlidingWindow(Window):
         decoder = self.bp_lsd_1 if self.round == 0 else self.bp_lsd_2
 
         syndrome = (H @ error_vec) % 2
-        temp = syndrome
+        temp = syndrome.copy()
         if self.round > 0 and self.buffer_size != 0:
 
+            error_vec[:self.num_columns // 2] = self.prev_error[self.num_columns // 2:]
             syndrome[:self.commit_size] = (
                 self.prev_syndrome[self.commit_size:] 
                 + self.prev_H[self.commit_size:, :] @ self.prev_error
@@ -67,12 +68,17 @@ class SlidingWindow(Window):
 
         original_error = (logical_ops @ error_vec.T) % 2
         lsd_error = (logical_ops @ lsd_decoding) % 2
+        correct = np.array_equal(original_error, lsd_error)
+
+        if not correct:
+            print(temp)
+            print(syndrome)
+            print(self.prev_error)
 
         self.prev_syndrome = syndrome
-        self.prev_error = error_vec
+        self.prev_error = lsd_decoding
         self.prev_H = H
         self.round += 1
-        correct = np.array_equal(original_error, lsd_error)
         return correct
 
     def simulate(self, iters: float | None = 1_000_000):
